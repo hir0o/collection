@@ -18,6 +18,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@prisma/client": "5.7.1",
     "@types/node": "20.10.6",
     "@types/react": "18.2.46",
     "@types/react-dom": "18.2.18",
@@ -49,6 +50,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "eslint-plugin-storybook": "^0.6.15",
     "jsdom": "^23.0.1",
+    "prisma": "^5.7.1",
     "storybook": "^7.6.6"
   }
 }
