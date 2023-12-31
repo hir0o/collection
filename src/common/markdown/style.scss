@@ -103,9 +103,6 @@ $breakpoints: (
     margin-top: 0.5em;
     margin-bottom: 0.2em;
   }
-  :is(h1, h2, h3, h4, h5, h6):first-child {
-    margin-top: 0;
-  }
 
   @include mq(sm) {
     h1 {
@@ -297,4 +294,8 @@ $breakpoints: (
   //     margin: 0.5em 0;
   //   }
   // }
+
+  :is(*):first-child {
+    margin-top: 0;
+  }
 }
