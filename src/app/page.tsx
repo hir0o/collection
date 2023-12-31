@@ -1,9 +1,9 @@
-import { Counter } from "./components/Counter";
+import { Collection } from "@/models/Collection/components/Collection";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main>
-      <Counter />
+      <Collection title="My Collection" count={3} />
     </main>
   );
 }

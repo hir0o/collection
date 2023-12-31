@@ -7,14 +7,18 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen",
+    "codegen": "panda codegen",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
     "test:storybook": "test-storybook",
+    "gen:pathpida": "pathpida --ignorePath .gitignore --watch",
+    "gen:pandacss": "panda codegen",
+    "gen": "run-p gen:*",
     "format": "prettier -w .",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -24,7 +28,9 @@
     "@types/react-dom": "18.2.18",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
+    "lucide-react": "^0.303.0",
     "next": "14.0.4",
+    "pathpida": "^0.22.0",
     "prettier": "^3.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -50,6 +56,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "eslint-plugin-storybook": "^0.6.15",
     "jsdom": "^23.0.1",
+    "npm-run-all": "^4.1.5",
     "prisma": "^5.7.1",
     "storybook": "^7.6.6"
   }
