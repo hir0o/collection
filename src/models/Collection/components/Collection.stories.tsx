@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Collection } from "./Collection";
+import { CollectionCard } from "./CollectionCard";
 
-const meta: Meta<typeof Collection> = {
-  component: Collection,
+const meta: Meta<typeof CollectionCard> = {
+  component: CollectionCard,
 };
 
 export default meta;

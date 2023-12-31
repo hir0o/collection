@@ -11,13 +11,13 @@ type Props = {
   thumbnail?: string;
 };
 
-export const Collection: FC<Props> = ({ title, count, thumbnail }) => {
+export const CollectionCard: FC<Props> = ({ title, count, thumbnail }) => {
   return (
     <section
       className={hstack({
         width: "100%",
         cursor: "pointer",
-        backgroundColor: "gray.600",
+        backgroundColor: "gray.700",
         gap: 2,
         padding: 3,
         alignItems: "flex-start",
