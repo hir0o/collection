@@ -2,6 +2,7 @@ import { ClipCard } from "@/models/Clip";
 import { CollectionCard } from "@/models/Collection/components/CollectionCard";
 import { css } from "../../styled-system/css";
 import { vstack } from "../../styled-system/patterns";
+import { Editor } from "@/models/Markdown/components/Editor";
 
 const sampleTexts = [
   `
@@ -28,6 +29,7 @@ export default async function Home() {
         height: "100dvh",
       })}
     >
+      <Editor />
       <CollectionCard title="My Collection" count={3} />
       <div
         className={vstack({
