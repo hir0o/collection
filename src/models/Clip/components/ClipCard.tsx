@@ -1,15 +1,13 @@
-import "@/common/markdown/style.scss";
 import { FC } from "react";
 import { css } from "../../../../styled-system/css";
-import { markdownToHtml } from "@/common/markdown/parser";
+import { markdownToHtml } from "@/models/Markdown/parser";
+import { MarkdownViewer } from "@/models/Markdown/components/MarkdownViewer";
 
 type Props = {
   content: string;
 };
 
 export const ClipCard: FC<Props> = ({ content }) => {
-  const html = markdownToHtml(content);
-
   return (
     <div
       className={css({
@@ -19,7 +17,7 @@ export const ClipCard: FC<Props> = ({ content }) => {
         color: "gray.100",
       })}
     >
-      <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
+      <MarkdownViewer content={content} />
     </div>
   );
 };

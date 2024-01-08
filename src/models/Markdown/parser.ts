@@ -1,6 +1,6 @@
 import MarkdownIt from "markdown-it";
 import { sanitize } from "./sanitizer";
-import { R } from "../lib/remeda";
+import { R } from "../../common/lib/remeda";
 
 const md = MarkdownIt("zero", {
   breaks: true,
