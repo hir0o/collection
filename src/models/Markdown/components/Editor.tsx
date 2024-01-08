@@ -1,15 +1,16 @@
-"use client";
-import { FC, useState } from "react";
+import { FC, ReactNode } from "react";
 import { css } from "../../../../styled-system/css";
 import * as Tabs from "@radix-ui/react-tabs";
-import { MarkdownViewer } from "./MarkdownViewer";
 import { hstack } from "../../../../styled-system/patterns";
 import { TabTrigger } from "./TabTrigger";
 
-type Props = {};
+type Props = {
+  editor: ReactNode;
+  preview: ReactNode;
+  footer: ReactNode;
+};
 
-export const Editor: FC = () => {
-  const [markdown, setMarkdown] = useState("");
+export const Editor: FC<Props> = ({ editor, preview, footer }) => {
   return (
     <Tabs.Root
       className={css({
@@ -37,29 +38,17 @@ export const Editor: FC = () => {
           paddingY: 4,
         })}
       >
-        <Tabs.Content value="editor">
-          <textarea
-            value={markdown}
-            onChange={(e) => setMarkdown(e.target.value)}
-            placeholder="コメントを追加"
-            className={css({
-              width: "100%",
-              resize: "vertical",
-              bgColor: "transparent",
-              padding: 2,
-              _focusVisible: {
-                outlineColor: "blue.500",
-                outlineStyle: "solid",
-                outlineWidth: "2px",
-                borderRadius: "sm",
-              },
-            })}
-          />
-        </Tabs.Content>
-        <Tabs.Content value="preview">
-          <MarkdownViewer content={markdown} />
-        </Tabs.Content>
+        <Tabs.Content value="editor">{editor}</Tabs.Content>
+        <Tabs.Content value="preview">{preview}</Tabs.Content>
       </div>
+      <hr
+        className={css({
+          border: "none",
+          borderTop: "1px solid",
+          borderColor: "gray.600",
+        })}
+      />
+      <div>{footer}</div>
     </Tabs.Root>
   );
 };
